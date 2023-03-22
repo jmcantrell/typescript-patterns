@@ -24,26 +24,40 @@ export function parseNucleotideSequence(s: string): Array<Nucleotide> {
 }
 
 function deepClone<T>(obj: T): T {
-  if (Array.isArray(obj)) {
+  if (obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  if (obj instanceof Date) {
+    const clone = new Date();
+    clone.setTime(obj.getTime());
+    return clone as T;
+  }
+
+  if (obj instanceof Map) {
+    return new Map(obj) as T;
+  }
+
+  if (obj instanceof Set) {
+    return new Set(obj) as T;
+  }
+
+  if (obj instanceof Array) {
     return obj.map((item) => deepClone(item)) as unknown as T;
   }
 
-  if (obj && typeof obj === "object") {
+  if (obj instanceof Object) {
     const clone = Object.create(Object.getPrototypeOf(obj));
     const descriptors = Object.getOwnPropertyDescriptors(obj);
 
     for (const [name, descriptor] of Object.entries(descriptors)) {
-      if (descriptor.value && typeof descriptor.value === "object") {
-        clone[name] = deepClone(descriptor.value);
-      } else {
-        clone[name] = descriptor.value;
-      }
+      clone[name] = deepClone(descriptor.value);
     }
 
-    return clone as T;
+    return clone;
   }
 
-  return obj;
+  throw new TypeError(`unknown object type: ${typeof obj}`);
 }
 
 export class Chromosome {
