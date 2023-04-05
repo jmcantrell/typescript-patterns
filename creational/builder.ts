@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Builder_pattern
+
 export enum Flavor {
   Vanilla = "vanilla",
   Chocolate = "chocolate",

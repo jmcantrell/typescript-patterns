@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Decorator_pattern
+
 // deno-lint-ignore no-explicit-any
 export type SyncFunction<T> = (...args: any[]) => T;
 

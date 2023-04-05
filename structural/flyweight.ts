@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Flyweight_pattern
+
 let id = 0;
 const tree_images = new Map<string, string>();
 

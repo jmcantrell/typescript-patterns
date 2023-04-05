@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Dependency_injection
+
 export interface Logger {
   info: (text: string) => void;
   warn: (text: string) => void;

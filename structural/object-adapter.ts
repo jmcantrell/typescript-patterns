@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Adapter_pattern#Object_adapter_pattern
+
 export interface Config {
   get: (key: string) => string | undefined;
   set: (key: string, value: string) => void;

@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Facade_pattern
+
 export class HttpError extends Error {
   constructor(status: number, message: string) {
     super(`request failed: ${message}`);

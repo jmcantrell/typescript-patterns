@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Factory_method_pattern
+
 export interface Character {
   greet: (name: string) => string;
 }

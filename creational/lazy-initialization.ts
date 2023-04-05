@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Lazy_initialization
+
 export class Lazy<T> {
   #initializer: () => T;
   #value?: T;

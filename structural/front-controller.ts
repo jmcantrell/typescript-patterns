@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Front_controller
+
 export type Request = string;
 export type Response = string;
 export type Handler = (request: Request) => Response;

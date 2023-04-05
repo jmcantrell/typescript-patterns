@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Singleton_pattern
+
 export class Connection {
   static #instance?: string;
 

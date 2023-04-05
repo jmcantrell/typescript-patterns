@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Prototype_pattern
+
 export enum Nucleotide {
   Guanine = "G",
   Adenine = "A",

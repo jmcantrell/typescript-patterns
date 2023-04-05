@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Composite_pattern
+
 export interface Component {
   render: () => string;
 }

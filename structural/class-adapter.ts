@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Adapter_pattern#Class_adapter_pattern
+
 export interface Reader {
   read: () => string;
 }

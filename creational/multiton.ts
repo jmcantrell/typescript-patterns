@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Multiton_pattern
+
 export type Fetcher<T> = (key: string) => T | undefined;
 
 export class Cache<T> {

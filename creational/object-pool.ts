@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Object_pool_pattern
+
 export type Creator<T> = (id: number) => T;
 
 export interface Lease<T> {

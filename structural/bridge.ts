@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Bridge_pattern
+
 export class Vec2 {
   x: number;
   y: number;

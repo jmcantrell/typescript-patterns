@@ -1,3 +1,5 @@
+// https://en.wikipedia.org/wiki/Delegation_pattern
+
 export type Vector = [number, number];
 
 export interface Polygon {
