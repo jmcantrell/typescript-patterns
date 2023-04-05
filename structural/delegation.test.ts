@@ -1,4 +1,4 @@
-import { Circle, Rectangle, Scaled, Vector } from "./delegate.ts";
+import { Circle, Rectangle, Scaled, Vector } from "./delegation.ts";
 import { assertAlmostEquals, assertEquals } from "std/testing/asserts.ts";
 
 const origin: Vector = [0, 0];
