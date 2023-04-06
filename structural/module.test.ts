@@ -6,6 +6,8 @@ Deno.test("createTransformingMultiplexer", () => {
   const transform_spy = spy((input: number) => (input * 2).toString());
   const multiplexer = createTransformingMultiplexer(transform_spy);
 
+  assertEquals(multiplexer.size(), 0);
+
   multiplexer.publish(3);
   assertSpyCalls(transform_spy, 0);
 
@@ -19,6 +21,7 @@ Deno.test("createTransformingMultiplexer", () => {
     unsubscribes.push(multiplexer.subscribe(subscriber_spy));
   }
 
+  assertEquals(multiplexer.size(), num_subscribers);
   assertEquals(subscriber_spies.length, num_subscribers);
   assertEquals(unsubscribes.length, num_subscribers);
 
@@ -31,6 +34,7 @@ Deno.test("createTransformingMultiplexer", () => {
   }
 
   unsubscribes[0]();
+  assertEquals(multiplexer.size(), 2);
 
   multiplexer.publish(4);
   assertSpyCalls(transform_spy, 2);
@@ -42,5 +46,8 @@ Deno.test("createTransformingMultiplexer", () => {
   for (let i = 1; i < num_subscribers; i++) {
     assertSpyCalls(subscriber_spies[i], 2);
     assertSpyCall(subscriber_spies[i], 1, { args: ["8"] });
+    unsubscribes[i]();
   }
+
+  assertEquals(multiplexer.size(), 0);
 });

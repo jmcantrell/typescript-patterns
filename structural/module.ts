@@ -9,6 +9,7 @@ export type Subscribe<Data> = (subscriber: Subscriber<Data>) => Unsubscribe;
 export type Transform<Input, Output> = (input: Input) => Output;
 
 export interface TransformingMultiplexer<Input, Output> {
+  size: () => number;
   publish: Publish<Input>;
   subscribe: Subscribe<Output>;
 }
@@ -21,6 +22,10 @@ export function createTransformingMultiplexer<
   transform: Transform<Input, Output>,
 ): TransformingMultiplexer<Input, Output> {
   const subscribers = new Set<Subscriber<Output>>();
+
+  function size(): number {
+    return subscribers.size;
+  }
 
   function publish(data: Input) {
     if (subscribers.size == 0) return;
@@ -37,5 +42,5 @@ export function createTransformingMultiplexer<
     };
   }
 
-  return { publish, subscribe };
+  return { size, publish, subscribe };
 }
