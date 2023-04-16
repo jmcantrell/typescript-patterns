@@ -66,3 +66,22 @@ Deno.test("Paste", () => {
   app.pressKey("ctrl+v");
   assertEquals(app.buffers.active.getText(), ">Hello, world!<");
 });
+
+Deno.test("Undo", () => {
+  const app = createApp();
+  assertEquals(app.buffers.active.getText(), "Hello, world!");
+
+  app.pressKey("ctrl+a");
+  app.pressKey("ctrl+x");
+  assertEquals(app.buffers.active.getText(), "");
+
+  app.pressKey("ctrl+z");
+  assertEquals(app.buffers.active.getText(), "Hello, world!");
+
+  app.buffers.active.setSelection(0, 5);
+  app.pressKey("ctrl+x");
+  assertEquals(app.buffers.active.getText(), ", world!");
+
+  app.clickButton("undo");
+  assertEquals(app.buffers.active.getText(), "Hello, world!");
+});
