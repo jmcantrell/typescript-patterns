@@ -1,6 +1,6 @@
 import { Container, Heading, Link, Paragraph } from "./composite.ts";
 import { assertEquals } from "std/testing/asserts.ts";
-import lipsum from "../testing/lipsum.ts";
+import lipsum from "../lib/testing/lipsum.ts";
 
 Deno.test("Document", () => {
   const text = lipsum();
