@@ -324,10 +324,9 @@ export class Process {
   }
 
   input(): number {
-    if (this.inputIndex >= this.inputBuffer.length) {
-      throw new Error("unexpected end of input");
-    }
-    return this.inputBuffer[this.inputIndex++];
+    return this.inputIndex < this.inputBuffer.length
+      ? this.inputBuffer[this.inputIndex++]
+      : -1; // EOF
   }
 
   output() {
