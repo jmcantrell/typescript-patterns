@@ -92,7 +92,7 @@ export function* cycle<T>(items: Iterable<T>, times = Infinity): Generator<T> {
 export function* range(
   lower: number,
   upper?: number,
-  step?: number = 1,
+  step = 1,
 ): Generator<number> {
   if (upper === undefined || upper === null) {
     upper = lower;
@@ -103,6 +103,6 @@ export function* range(
   }
 }
 
-export function* count(index: number = 0): Generator<number> {
+export function* count(index = 0): Generator<number> {
   while (true) yield index++;
 }
