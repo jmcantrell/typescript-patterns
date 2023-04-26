@@ -1,8 +1,7 @@
 // https://en.wikipedia.org/wiki/Observer_pattern
 
-type EmptyFunction = () => void;
 export type Observer<T> = (value: T) => void;
-export type Unsubscriber = EmptyFunction;
+export type Unsubscriber = () => void;
 
 export class Subject<T> {
   #value: T;
