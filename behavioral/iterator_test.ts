@@ -2,12 +2,12 @@ import { createEnumerate, Enumerate, enumerate } from "./iterator.ts";
 import type { Enumerated } from "./iterator.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 import { count, repeat, zip } from "../lib/iter.ts";
-import { randIntRange } from "../lib/rand.ts";
+import { randIntBetween } from "../lib/rand.ts";
 
 type TestCase<T> = [Iterable<T>, Iterable<Enumerated<T>>];
 
 const item = "test";
-const numItems = randIntRange(5, 20);
+const numItems = randIntBetween(5, 20);
 const items = Array.from(repeat(item, numItems));
 
 const testCases: Array<TestCase<unknown>> = [

@@ -2,7 +2,7 @@ export function randInt(max: number): number {
   return Math.floor(Math.random() * max);
 }
 
-export function randIntRange(min: number, max: number): number {
+export function randIntBetween(min: number, max: number): number {
   return min + randInt(max);
 }
 
@@ -14,5 +14,5 @@ export function shuffle<T>(items: Array<T>) {
 }
 
 export function randChoice<T>(items: Array<T>): T | undefined {
-  return items[randIntRange(0, items.length)];
+  return items[randIntBetween(0, items.length)];
 }

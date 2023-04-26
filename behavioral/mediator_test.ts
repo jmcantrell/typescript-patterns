@@ -1,6 +1,6 @@
 import { ChatServer } from "./mediator.ts";
 import { assertEquals } from "std/testing/asserts.ts";
-import { randChoice, randIntRange } from "../lib/rand.ts";
+import { randChoice, randIntBetween } from "../lib/rand.ts";
 import { map, range } from "../lib/iter.ts";
 
 Deno.test("connected clients", () => {
@@ -24,7 +24,7 @@ Deno.test("client only receives updates since last update", () => {
 
   for (const sender of clients) {
     const texts = Array.from(map(
-      range(randIntRange(1, 5)),
+      range(randIntBetween(1, 5)),
       (j: number) => `message #${j + 1} from ${sender.username()}`,
     ));
 
@@ -54,11 +54,11 @@ Deno.test("client receives updates in the order they are sent", () => {
 
   const expectedUsernames = [];
   const expectedTexts = [];
-  const numTotalMessages = randIntRange(5, 20);
+  const numTotalMessages = randIntBetween(5, 20);
 
   for (const i of range(numTotalMessages)) {
     const sender = randChoice(clients)!;
-    const numMessages = randIntRange(1, 5);
+    const numMessages = randIntBetween(1, 5);
     for (const j of range(numMessages)) {
       const text = `#${i + 1}, #${j + 1} from ${sender.username()}`;
       expectedUsernames.push(sender.username());
