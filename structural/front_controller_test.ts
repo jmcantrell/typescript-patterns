@@ -1,4 +1,4 @@
-import { Handler, Request, Response, Router } from "./front-controller.ts";
+import { Handler, Request, Response, Router } from "./front_controller.ts";
 import {
   assertSpyCall,
   assertSpyCalls,

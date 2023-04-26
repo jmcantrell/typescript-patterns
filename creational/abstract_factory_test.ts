@@ -1,4 +1,4 @@
-import { HtmlFactory, MarkdownFactory } from "./abstract-factory.ts";
+import { HtmlFactory, MarkdownFactory } from "./abstract_factory.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
 Deno.test("HtmlFactory", () => {

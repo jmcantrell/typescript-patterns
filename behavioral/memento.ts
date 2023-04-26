@@ -1,7 +1,7 @@
 // https://en.wikipedia.org/wiki/Memento_pattern
 
 import { clamp } from "../lib/math.ts";
-import presets from "../data/equalizer-presets.json" assert { type: "json" };
+import presets from "../data/equalizer_presets.json" assert { type: "json" };
 
 type Memento = () => void;
 

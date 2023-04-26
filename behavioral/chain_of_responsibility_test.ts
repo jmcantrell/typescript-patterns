@@ -1,4 +1,4 @@
-import { HandlerStack } from "./chain-of-responsibility.ts";
+import { HandlerStack } from "./chain_of_responsibility.ts";
 import { assert } from "std/testing/asserts.ts";
 
 Deno.test("HandlerStack with no handlers", () => {

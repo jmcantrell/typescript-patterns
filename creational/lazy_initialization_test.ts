@@ -1,4 +1,4 @@
-import { Lazy } from "./lazy-initialization.ts";
+import { Lazy } from "./lazy_initialization.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 import { assertSpyCalls, spy } from "std/testing/mock.ts";
 

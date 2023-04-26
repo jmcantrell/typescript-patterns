@@ -1,4 +1,4 @@
-import { Config, JsonConfig, MapConfig } from "./object-adapter.ts";
+import { Config, JsonConfig, MapConfig } from "./object_adapter.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
 function testConfig(config: Config) {

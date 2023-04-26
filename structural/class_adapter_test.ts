@@ -1,4 +1,4 @@
-import { Base64Decoder, ByteDecoder } from "./class-adapter.ts";
+import { Base64Decoder, ByteDecoder } from "./class_adapter.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
 Deno.test("Base64Decoder", () => {

@@ -1,4 +1,4 @@
-import { CharacterFactory, Theme } from "./factory-method.ts";
+import { CharacterFactory, Theme } from "./factory_method.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
 Deno.test("CharacterFactory", () => {

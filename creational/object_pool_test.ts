@@ -1,4 +1,4 @@
-import { ObjectPool } from "./object-pool.ts";
+import { ObjectPool } from "./object_pool.ts";
 import {
   assertEquals,
   assertMatch,

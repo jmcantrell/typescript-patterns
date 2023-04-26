@@ -1,4 +1,4 @@
-import { Logger, Service } from "./dependency-injection.ts";
+import { Logger, Service } from "./dependency_injection.ts";
 import { assertEquals } from "std/testing/asserts.ts";
 
 class MockLogger implements Logger {
